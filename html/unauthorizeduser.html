@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8" />
+        <title></title>
+        <meta name="Keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="Administrator" />
+
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+        <link href="./css/base.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="unauthUser login">
+        <header>
+            <div class="back"></div>
+            请关注
+        </header>
+        <div class="con">
+            <img src="./images/breakheart.png" alt="" class="wel">
+            <p style="margin-top:2em;width:80%;margin-left:10%;line-height:2em;">请长按二维码关注“我们”<br />通过公众号进入商城并登录一次，绑定账号<br />否则将无法购买和支付</p>
+            <div class="btn" id="jshome">返回首页</div>
+        </div>
+        <script type='text/javascript' src='./javascript/jquery-2.1.4.min.js?version=1.02'></script>
+
+        <script type='text/javascript' src='./javascript/basepath.js?version=1.02'></script>
+        <script type='text/javascript' src='javascript/global2.js?version=1.02'></script>
+        <script type='text/javascript' src='./javascript/simple.js?version=1.02'></script>
+    <script>
+        $(document).ready(function(){
+            $('#jshome').click(function(){
+                window.location.href = 'home.html';
+            });
+        });
+
+    </script>
+    </body>
+</html>

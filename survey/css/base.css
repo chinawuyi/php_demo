@@ -1,0 +1,94 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, .btn, button {margin: 0; padding: 0; border: 0; font-style: inherit; font-weight: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline;}
+body {height:100%;}
+div {text-align:left;height:100%;}
+html{ background:#eff0f2;height:100%;}
+body{font-family:"微软雅黑","Arial";}
+h1, h2, h3, h4, h5, h6{font-size:100%;}
+address, cite, em{font-style:normal;}
+li{list-style-type:none;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+a:focus{outline: none; }
+fieldset, img {border:0;}
+label,button{cursor: pointer;}
+select,input,textarea{font-size:12px;line-height:1.2em;border:0px;}
+input,button,select,textarea{outline:none; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box; resize:none;font-family:"微软雅黑","Arial";font-size: 1rem;}
+iframe{border:0px;width:100%;height:100%;}
+img {vertical-align:top;}
+
+/*公共模块*/
+.pub_hidden{display:none;}
+
+/*弹出提示控件样式*/
+.jsmask{background-color:#000000;opacity:0.6;z-index:1;position:absolute;left:0px;top:0px;width:100%;height:100%;right:0px;bottom:0px;}
+
+.jsmsgbox{position:absolute;width:100%;height:100%;z-index:11111;left:0px;top:0px;}
+.jsmsgbox .mask{background-color:#000000;opacity:0.6;position:absolute;width:100%;height:100%;z-index:11111;left:0px;top:0px;}
+.jsmsgbox .errorboxbg{z-index:11114;text-align:center;background-color:#000000;width:70%;margin:0em auto;color: #fff;line-height: 1.5em;padding: 0.5em;position:relative;z-index:11112;top:50%;margin-top:-2em;border-radius:5px;}
+.jsmsgbox .errorbox{text-align:center;line-height:3em;width:100%;color:#ffffff;font-weight:bold;z-index:33;margin:0em auto;z-index:11114;position:absolute;top:50%;margin-top:-1.5em;border-radius:5px;}
+.jsmsgbox .errormask{background-color:#000000;opacity:0.3;position:absolute;width:100%;height:100%;z-index:11111;left:0px;top:0px;}
+.jsmsgbox .msgbox{width:80%;min-height:140px;height:auto;-webkit-box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 15px;overflow:hidden;
+    box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 15px;border-top-left-radius: 6px;border-top-right-radius: 6px;border-bottom-right-radius: 6px;border-bottom-left-radius: 6px;
+    background-color: rgb(255, 255, 255);position:fixed;top:100px;z-index:122222;left: 50%;
+    margin-left: -40%;}
+.jsmsgbox .msgcontent{width:100%;min-height:100px;height:auto;position:relative;left:0px;top:0px;}
+.jsmsgbox .msgcontent img{height:4em;width:auto;position:absolute;top:50%;margin-top:-2em;left:1em;}
+.jsmsgbox .msgcontent .msg{height:100%;width:100%;right:0px;top:0px;}
+.jsmsgbox .msgcontent .msg .title{background:transparent;font-weight:bold;font-size:1.25em;text-align:center;border-bottom:0px;}
+.jsmsgbox .msgcontent .msg .content{padding:0.5em;font-size:0.75em;font-weight:normal;color:#424242;}
+.jsmsgbox .msgfooter{width:100%;height:40px;background-color:#eeeeee;position:relative;bottom:0px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;}
+.jsmsgbox .msgfooter button{position:absolute;right:1em;font-size:0.75em;font-weight:normal;top:0.75em;}
+
+
+header{ text-align:center; font-size:1.3rem; color:#fff; text-align:center; letter-spacing: 0.04rem;  background:#8c98a6; line-height:3.75rem;}
+header.ticket{width:100%; height:3.67rem; background-color:#8c98a6; position: fixed; top:0rem; z-index:333; text-align:center; line-height:3.67rem; font-size:1.2rem; color:#fff;}
+header .back{  position:absolute;  cursor:pointer;}
+header .back img{ width:2.5rem;margin-top:0.58rem;}
+header .back{ left:0rem;}
+.con{ width:100%; position:absolute; top:3.67rem; bottom:0rem; left:0rem; right:0rem; overflow-y:auto;}
+
+p.illu{ margin-top:0.7rem; color:#383749; line-height:1.4rem; padding:0.7rem 4.2% 0.4rem; background:#fff; border-top:0.083rem solid #dcdddf; border-bottom:0.083rem solid #dcdddf;}
+section{}
+section h1{ line-height:1.35rem; color:#009edb; padding:0.5rem 4.2% 0.3rem; font-size: 1.05rem; border-bottom:0.083rem solid #dcdddf;}
+section h1 span{ color: #f56066;}
+section ul{ border-bottom:0.083rem solid #dcdddf; background:#fff; line-height: 1.75rem; padding: 0.3rem 5%;}
+section ul li{ white-space: nowrap; position: relative;}
+section ul li p{ display:inline-block; color: #383749;}
+section ul li div{ vertical-align: -0.3rem; margin-right: 0.4rem; color: #383749;}
+section ul li input{ vertical-align: -0.25rem; width:1.3rem; height: 1.3rem; border:0.083rem solid #BBBBBB; text-align: center; color: #f56066;}
+section ul li textarea{ width: 92%; border: 0.083rem solid #efeeee; position: absolute; left:2.2rem; top:1.74rem; background:#fff; padding: 0.5rem; height: 4.5rem; color: #383749;}
+section.containArea ul{ padding-bottom: 5.4rem;}
+section .area{ border-bottom:0.083rem solid #dcdddf; background:#fff; padding: 0.8rem 5%;}
+section .area textarea{  width: 100%; border: 0.083rem solid #efeeee; background:#fff; padding: 0.5rem; height: 4.5rem;}
+.radio{ display:inline-block; width: 1.3rem; height: 1.3rem; background: url(../images/radio.png) no-repeat; background-size: 1.25rem 1.25rem; }
+.radio.active{ background-image: url(../images/radio_ac.png);}
+.check{ display:inline-block; width: 1.4rem; height: 1.4rem; background: url(../images/check.png) no-repeat; background-size: 1.35rem 1.35rem; }
+.check.active{ background-image: url(../images/check_ac.png);}
+
+.btn{ width:91.7%; color:#009edb; line-height: 3.1rem; height:3.1rem;border-radius: 3.1rem; border: 0.083rem solid #009edb; text-align: center; margin:2.5rem auto; cursor: pointer; font-size: 1.2rem;}
+
+
+/*电影票-start*/
+.movieWrap{ bottom:0;}
+.movie .banner{ width:100%; margin-bottom:1rem; border-top:0.083rem solid #939eab;}
+.movie .detail{ background:#fff; border-top:0.083rem solid #eaebec; border-bottom:0.083rem solid #eaebec;}
+.movie .detail .left{ width:8.25rem; float:left;}
+.movie .detail .left img{ width:86%; display:block; margin:0.45rem auto 0.55rem; box-shadow:0.1rem 0.1rem 0.2rem #B1A5A5;}
+.movie .detail .right{ margin-left:8.25rem; padding-top:0.625rem;}
+.movie .detail .right .line{ line-height:1.33rem;}
+.movie .detail .right .line .label{ color:#383749; display:inline-block; transform:scale(0.9, 0.9); -webkit-transform:scale(0.9, 0.9); -moz-transform:scale(0.9, 0.9); -o-transform:scale(0.9, 0.9); transform-origin:left center; -o-transform-origin:left center; -moz-transform-origin:left center; -webkit-transform-origin:left center;}
+.movie .detail .right .line .blue{ color:#009edb; display:inline-block; text-indent:-0.6rem;}
+.movie .detail .right .line .blue.small{ color:#009edb; display:inline-block; transform:scale(0.9, 0.9); -webkit-transform:scale(0.9, 0.9); -moz-transform:scale(0.9, 0.9); -o-transform:scale(0.9, 0.9); transform-origin:left center; -o-transform-origin:left center; -moz-transform-origin:left center; -webkit-transform-origin:left center;}
+.movie .detail .right .line p{ width:112%; height:6.5rem; overflow:hidden; line-height:1.3rem; color:#828689; transform:scale(0.85, 0.85); -webkit-transform:scale(0.85, 0.85); -moz-transform:scale(0.85, 0.85); -o-transform:scale(0.85, 0.85); transform-origin:left top; -o-transform-origin:left top; -moz-transform-origin:left top; -webkit-transform-origin:left top;}
+
+.movie .extra{ background:#fff; border-top:0.083rem solid #eaebec; border-bottom:0.083rem solid #eaebec; margin-top:1rem; padding:0 3.75%;}
+.movie .extra h1{ line-height:1.9rem; margin-top:0.2rem; color:#383749; transform:scale(0.9, 0.9); -webkit-transform:scale(0.9, 0.9); -moz-transform:scale(0.9, 0.9); -o-transform:scale(0.9, 0.9); transform-origin:left center; -o-transform-origin:left center; -moz-transform-origin:left center; -webkit-transform-origin:left center;}
+.movie .extra p{ width:120%; line-height:1.3rem; color:#828689; transform:scale(0.85, 0.85); -webkit-transform:scale(0.85, 0.85); -moz-transform:scale(0.85, 0.85); -o-transform:scale(0.85, 0.85); transform-origin:left top; -o-transform-origin:left top; -moz-transform-origin:left top; -webkit-transform-origin:left top;}
+/*电影票-end*/
+
+/*完成或参与调查-start*/
+.oneBg{ background:#516986 url(../images/join.jpg) no-repeat 0rem 3.75rem; background-size:100% auto;}
+.oneBg.finish{ background-image:url(../images/finish.jpg);}
+/*完成或参与调查-end*/

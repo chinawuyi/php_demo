@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="Keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="Administrator" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link href="./css/base.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <script type='text/javascript' src='./javascript/jquery-2.1.4.min.js'></script>
+    <script type='text/javascript' src='./javascript/global.js'></script>
+    <script type='text/javascript'>
+    $(function(){
+        $(".radio").click(function(){
+            var name=$(this).attr("name");
+            $(document).find(".radio[name='"+name+"']").removeClass("active");
+            $(this).addClass("active");
+        });   
+        $(".check").click(function(){
+            if($(this).hasClass("active")){
+                $(this).removeClass("active");
+            }
+            else{
+                $(this).addClass("active");
+            }
+        });
+        var getAnswer = {
+            getRadio : function(obj,i)
+            {
+                $(obj).find('div.radio').each(function(){
+                    if($(this).hasClass('active'))
+                    {
+                        arr[i].answer = $(this).attr('value');
+                    }
+                });
+            },
+            getCheck : function(obj,i,textarea)
+            {
+                arr[i].answer = '';
+                $(obj).find('div.check').each(function(){
+                    if($(this).hasClass('active'))
+                    {
+                        arr[i].answer += $(this).attr('value')+'|';
+                    }
+                });
+                if(textarea == true)
+                {
+                    arr[i].msg = $(obj).find('textarea').val();
+                }
+            },
+            getMsg : function(obj,i)
+            {
+                arr[i].answer = '|';
+                arr[i].msg = $(obj).find('textarea').val();
+
+            }
+        }
+        var arr = [];
+        $('section').each(function(){
+            var qid = $(this).attr('dataid');
+            var answer = {
+                'qid':qid
+            };
+            arr.push(answer);
+        });
+		$('#jssub').click(function(){
+            var complete = true;
+            $('section').each(function(i){
+                //第一条问卷
+                switch(i)
+                {
+                    case 0 :getAnswer.getRadio(this,i);
+                        break;
+                    case 1 :getAnswer.getRadio(this,i);
+                        break;
+                    case 2 :getAnswer.getRadio(this,i);
+                        break;
+                    case 3 :getAnswer.getCheck(this,i);
+                        break;
+                    case 4 :getAnswer.getRadio(this,i);
+                        break;
+                    case 5 :getAnswer.getCheck(this,i);
+                        break;
+                    case 6 :getAnswer.getCheck(this,i);
+                        break;
+                    case 7 :getAnswer.getCheck(this,i);
+                        break;
+                    case 8 :getAnswer.getRadio(this,i);
+                        break;
+                    case 9 :getAnswer.getCheck(this,i,true);
+                        break;
+                    case 10 :getAnswer.getCheck(this,i,true);
+                        break;
+                    case 11 :getAnswer.getMsg(this,i);
+                        break;
+                }
+            });
+            $(arr).each(function(){
+                if(!this.answer)
+                {
+                    complete = false;
+                }
+            });
+            console.log(arr);
+            if(complete == false)
+            {
+                $.easyErrorBox('您的问卷调没有全部回答完毕');
+                return;
+            }
+			$.ajax({
+				url:'../index.php/public/survey/addsurvey',
+                data:{
+                    'data':JSON.stringify(arr)
+                },
+                success:function(xhr)
+                {
+                    if(xhr == 'success')
+                    {
+                        //$.easyErrorBox('提交成功',function(){
+                        window.location.href = 'finish.html';
+			//			});
+                    }
+
+                    else if(xhr == 'error')
+                    {
+                        $.easyErrorBox('数据提交出错，请重新提交');
+                    }
+
+                    if (xhr == 'noright'){
+                        window.location.href = '../html/login.html';
+                    }
+
+                },
+				beforeSend:function(){
+					$.loadingStart();
+				},
+				complete:function(){
+					$.loadingEnd();
+				}
+			});
+		});
+
+
+
+    });
+    </script>
+</head>
+<body>
+    <header> 农行内部网e动乐享调查</header>
+    <p class="illu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;亲，您预订的 “农行内部员工e动乐享”终于要“发货”了。不过嘛！为了让亲有一个轻（zai）松（mai）安（duo）全（shou）的购物环境，我们需要多听听您的意（tu）见(cao)，更想了解您的需求，亲的支持是对我们莫大的肯定啦。亲回答的这些问卷问题，我们只会私藏，深度研究亲的喜好，真心不用担心暴露你的年龄哦(*^__^*) </p>
+    <p class="illu"> 亲，参与问卷调查 ，<span style="color:red;">获赠12月11日上映的“擦枪走火”电影票一张</span>哦~~~
+        亲咱们快开始吧…… </p>
+    <section dataid="1">
+        <h1>1、不介意告诉我，亲的性别是什么吧？</h1>
+        <ul>
+            <li>
+                <div class="radio" name="1" value="2"></div>
+                <p>A、男</p>
+            </li>
+            <li>
+                <div class="radio" name="1" value="3"></div>
+                <p>B、女 </p>
+            </li>
+            <li>
+                <div class="radio" name="1" value="4"></div>
+                <p>C、以上不符合请点此选项</p>
+            </li>
+        </ul>
+    </section>
+    <section dataid="5">
+        <h1>2、不冒昧的问您一句，每月的平均网购支出？</h1>
+        <ul>
+            <li>
+                <div class="radio" name="2" value="6"></div>
+                <p>A、200元以下的平民</p>
+            </li>
+            <li>
+                <div class="radio" name="2" value="7"></div>
+                <p>B、200-500元的小资</p>
+            </li>
+            <li>
+                <div class="radio" name="2" value="8"></div>
+                <p>C、500-1000元的大手笔</p>
+            </li>
+            <li>
+                <div class="radio" name="2" value="9"></div>
+                <p>D、1000-3000元土豪</p>
+            </li>
+            <li>
+                <div class="radio" name="2" value="10"></div>
+                <p>E、3000元以上的土豪，偶们可否做朋友</p>
+            </li>
+        </ul>
+    </section>
+    <section dataid="11">
+        <h1>3、现在掏出小本算算每月的网购支出占整个购物支出的比例？</h1>
+        <ul>
+            <li>
+                <div class="radio" name="3" value="12"></div>
+                <p>A、10%以下</p>
+            </li>
+            <li>
+                <div class="radio" name="3" value="13"></div>
+                <p>B、10-30%</p>
+            </li>
+            <li>
+                <div class="radio" name="3" value="14"></div>
+                <p>C、30-50%</p>
+            </li>
+            <li>
+                <div class="radio" name="3" value="15"></div>
+                <p>D、50%以上</p>
+            </li>
+        </ul>
+    </section>
+    <section dataid="16">
+        <h1>4、您喜欢上网购买哪类商品？<span>（多选）</span></h1>
+        <ul>
+            <li>
+                <div class="check" name="4" value="17"></div>
+                <p>A、家电数码类</p>
+            </li>
+            <li>
+                <div class="check" name="4" value="18"></div>
+                <p>B、服装类</p>
+            </li>
+            <li>
+                <div class="check" name="4" value="19"></div>
+                <p>C、食品酒水类</p>
+            </li>
+            <li>
+                <div class="check" name="4" value="20"></div>
+                <p>D、家居家装类</p>
+            </li>
+            <li>
+                <div class="check" name="4" value="21"></div>
+                <p>E、化妆品类</p>
+            </li>
+            <li>
+                <div class="check" name="4" value="22"></div>
+                <p>F、日用百货</p>
+            </li>
+            <li>
+                <div class="check" name="4" value="23"></div>
+                <p>G、生鲜类</p>
+            </li>
+            <li>
+                <div class="check" name="4" value="24"></div>
+                <p>H、其他</p>
+            </li>
+        </ul>
+    </section>
+    <section dataid="25">
+        <h1>5、您觉得物流配送时间在多久是能够接受的？</h1>
+        <ul>
+            <li>
+                <div class="radio" name="5" value="26"></div>
+                <p>A、 5天内都可接受的好脾气</p>
+            </li>
+            <li>
+                <div class="radio" name="5" value="27"></div>
+                <p>B、3天内就不错</p>
+            </li>
+            <li>
+                <div class="radio" name="5" value="28"></div>
+                <p>C、限你2天以内出现</p>
+            </li>
+            <li>
+                <div class="radio" name="5" value="29"></div>
+                <p>D、必须在24小时内到达，我是急茬儿</p>
+            </li>
+        </ul>
+    </section>
+    <section dataid="30">
+        <h1>6、您在网上购买同款商品时，什么因素促使你最终购买？<span>（多选）</span></h1>
+        <ul>
+            <li>
+                <div class="check" name="6" value="31"></div>
+                <p>（价格）便宜就好，精打细算。</p>
+            </li>
+            <li>
+                <div class="check" name="6" value="32"></div>
+                <p>（物流）我就是受不了那漫长的等待！</p>
+            </li>
+            <li>
+                <div class="check" name="6" value="33"></div>
+                <p>（评价）听一听买过的人怎么说。</p>
+            </li>
+            <li>
+                <div class="check" name="6" value="34"></div>
+                <p>（售后服务）包退包换包修理的誓言。</p>
+            </li>
+            <li>
+                <div class="check" name="6" value="35"></div>
+                <p>（信自己）让我感觉品质更好更正规的商品。</p>
+            </li>
+        </ul>
+    </section>
+    <section dataid="36">
+        <h1>7、那种促销最能不经意间击中你的心？<span>（多选）</span></h1>
+        <ul>
+            <li>
+                <div class="check" name="7" value="37"></div>
+                <p>A、包邮</p>
+            </li>
+            <li>
+                <div class="check" name="7" value="38"></div>
+                <p>B、折扣</p>
+            </li>
+            <li>
+                <div class="check" name="7" value="39"></div>
+                <p>C、红包/代金券等</p>
+            </li>
+            <li>
+                <div class="check" name="7" value="40"></div>
+                <p>D、礼品赠品等</p>
+            </li>
+            <li>
+                <div class="check" name="7" value="41"></div>
+                <p>E、其他方式</p>
+            </li>
+        </ul>
+    </section>
+    <section dataid="42">
+        <h1>8、如果准备网购或网购过程中，您最不想遇到什么问题：<span>（多选）</span></h1>
+        <ul>
+            <li>
+                <div class="check" name="8" value="43"></div>
+                <p>A、商品质量存在问题</p>
+            </li>
+            <li>
+                <div class="check" name="8" value="44"></div>
+                <p>B、商品描述与实物不一致</p>
+            </li>
+            <li>
+                <div class="check" name="8" value="45"></div>
+                <p>C、网上支付不安全</p>
+            </li>
+            <li>
+                <div class="check" name="8" value="46"></div>
+                <p>D、售后问题不能保证</p>
+            </li>
+            <li>
+                <div class="check" name="8" value="47"></div>
+                <p>E、物流运输没有保障</p>
+            </li>
+            <li>
+                <div class="check" name="8" value="48"></div>
+                <p>F、其他问题</p>
+            </li>
+        </ul>
+    </section>
+    <section dataid="49">
+        <h1>9、购物让您感觉特别不爽的是地方?</h1>
+        <ul>
+            <li>
+                <div class="radio" name="9" value="50"></div>
+                <p>A、商品太多查找累觉不爱</p>
+            </li>
+            <li>
+                <div class="radio" name="9" value="51"></div>
+                <p>B、不知道商品质量是否如描述吹嘘的那么厉害</p>
+            </li>
+            <li>
+                <div class="radio" name="9" value="52"></div>
+                <p>C、广告太多，信息直观，亮瞎眼</p>
+            </li>
+            <li>
+                <div class="radio" name="9" value="53"></div>
+                <p>D、物流速度慢，果断等不了</p>
+            </li>
+            <li>
+                <div class="radio" name="9" value="54"></div>
+                <p>E、客服态度不好，不会撒娇</p>
+            </li>
+        </ul>
+    </section>
+    <section class="containArea" dataid="55">
+        <h1>10、您希望内部网给您提供什么产品？<span>（多选）</span></h1>
+        <ul>
+            <li>
+                <div class="check" name="10" value="56"></div>
+                <p>A、海外代购</p>
+            </li>
+            <li>
+                <div class="check" name="10" value="57"></div>
+                <p>B、服装鞋帽类</p>
+            </li>
+            <li>
+                <div class="check" name="10" value="58"></div>
+                <p>C、生活日用品</p>
+            </li>
+            <li>
+                <div class="check" name="10" value="59"></div>
+                <p>D、农副产品</p>
+            </li>
+            <li>
+                <div class="check" name="10" value="60"></div>
+                <p>E、3c类</p>
+            </li>
+            <li>
+                <div class="check" name="10" value="61"></div>
+                <p>F、你想要的我没有的请告诉我：</p>
+                <textarea name=""  placeholder="请输入您想说的！"></textarea>
+            </li>
+        </ul>
+    </section>
+    <section class="containArea" dataid="62">
+        <h1>11、相比其他购物网站，您更希望内部网的产品<span>（多选）</span></h1>
+        <ul>
+            <li>
+                <div class="check" name="11" value="63"></div>
+                <p>A、价格一定要便宜</p>
+            </li>
+            <li>
+                <div class="check" name="11" value="64"></div>
+                <p>B、质量更有保障</p>
+            </li>
+            <li>
+                <div class="check" name="11" value="65"></div>
+                <p>C、购物更方便</p>
+            </li>
+            <li>
+                <div class="check" name="11" value="66"></div>
+                <p>D、服务好到没法拒绝</p>
+            </li>
+            <li>
+                <div class="check" name="11" value="67"></div>
+                <p>E、多打折促销</p>
+            </li>
+            <li>
+                <div class="check" name="11" value="68"></div>
+                <p>其他：</p>
+                <textarea name="" id="msg" placeholder="请输入您想说的！"></textarea>
+            </li>
+        </ul>
+    </section>
+    <section dataid="69">
+        <h1>12、您希望内部网给您提供哪些什么异于其他购物网站的服务？ 
+     （如二手物品置换、代买服务）</h1>
+        <div class="area">
+            <textarea name="" id="" placeholder="请输入您想说的！"></textarea>
+        </div>
+    </section>
+    <div class="btn" id="jssub">提&nbsp;&nbsp;交</div>
+</body>
+</html>

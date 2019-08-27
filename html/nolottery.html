@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="Keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="Administrator" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link href="./css/base.css" rel="stylesheet" type="text/css" />
+    <link href="./css/slider.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body>
+	<header>
+		<div class="back"><img src="./images/back.png"></div>
+	    未开奖
+	</header>
+	<div class="con oneyuan tab lottery">
+		<div class="tabHeader">
+			<ul>
+				<li class="active">产品</li>
+				<li>详情</li>
+			</ul>
+		</div>
+		<div class="tabBody">
+			<div class="list-item">
+				<div id="bannerShift">
+					<img src="./images/inter_pic.jpg" alt="">
+					<img src="./images/inter_pic.jpg" alt="">
+					<img src="./images/inter_pic.jpg" alt="">
+				</div>
+				<div class="col product nobor">
+					<div class="cont">
+						<p class="title">（第3期）HJMin纯色唇膏</p>
+						<p class="price">价值:￥140</p>
+						<div class="progress-con">
+							<div class="progress"><div class="progress-bar" style="width:80%"></div></div>
+							<div class="progress-txt">
+								<p class="left">已参与<span class="num">168</span></p>
+								<p class="right">剩余人数<span class="num">12</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col mypartin-record">
+					<div class="cont">
+						<p class="headline">我的参与记录</p>
+						<div class="mypartin-record-info">
+							<p class="activity">1元购了<span class="red">3</span>人次<span class="date">2016-03-26  09:00:12</span></p>
+							<div class="parterid">
+								<span class="name">
+									夺宝ID:
+								</span>
+								<ul class="list">
+									<li>125486790487</li>
+									<li>125486790487</li>
+									<li>125486790487</li>
+									<li>125486790487</li>
+									<li>125486790487</li>
+									<li>125486790487</li>
+									<li>125486790487</li>
+								</ul>
+								<span class="btns"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col doing">
+					本期活动正在进行中......
+				</div>
+				<div class="col treasure-record">
+					<div class="cont">
+						<div class="headline">
+							<p class="name all">所有参与记录</p>
+							<span class="folded">收起</span>
+						</div>
+						<div class="folded-con">
+							<ul class="record-list">
+								<li>
+									<p class="account">叶落知秋寒</p>
+									<p>1元购了<span class="red">1</span>人次      <span class="date"> 2016-03-26 09:00:12</span></p>
+									<p>夺宝ID: <span class="red">125486790487</span></p>
+								</li>
+								<li>
+									<p class="account">叶落知秋寒</p>
+									<p>1元购了<span class="red">1</span>人次      <span class="date"> 2016-03-26 09:00:12</span></p>
+									<p>夺宝ID: <span class="red">125486790487</span></p>
+								</li>
+							</ul>
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div class="list-item">
+				
+			</div>
+		</div>
+	</div>
+	<div class="seckill bottom">
+	    <div class="btn">
+	        <span>追加夺宝</span>
+	    </div>
+	</div>
+</body>
+<script type='text/javascript' src='./javascript/jquery-2.1.4.min.js'></script>
+<script type='text/javascript' src='./javascript/basepath.js'></script>
+<script type='text/javascript' src='javascript/global2.js'></script>
+<script type='text/javascript' src='./javascript/slider.js'></script>
+<script type='text/javascript' src='./javascript/simple.js'></script>
+<script type="text/javascript">
+    $(function(){
+    	$('#bannerShift').bxSlider({
+    	    controls:true,
+    	    auto:true
+    	});
+
+    	$('.folded').click(function(){
+			if($(this).parent('.headline').siblings('.folded-con').css('display') == 'none')
+			{
+				$(this).parent('.headline').siblings('.folded-con').show();
+				$(this).text('收起');
+			}else
+			{
+				$(this).parent('.headline').siblings('.folded-con').hide();
+				$(this).text('展开');
+			}	
+		})
+    });
+</script>
+</html>

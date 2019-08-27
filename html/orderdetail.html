@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="Keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="Administrator" />
+
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link href="./css/base.css" rel="stylesheet" type="text/css" />
+    <link href="./css/slider.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+
+</head>
+<body>
+<header>
+    <div class="back"><a onClick="javascript:history.go(-1);"><img src="./images/back.png"></a></div>
+    订单信息
+</header>
+<div class="con">
+    <div class="orderInfo" style="padding-bottom:1em;">
+        <div class="orderMain">
+            <h1 id="jssendstatus"></h1>
+            <h1 id="jsorderstatus"></h1>
+            <p class="orderCode">订单号：<span id="jsorderno"></span></p>
+            <p class="time">订单时间：<span id="jsordertime"></span></p>
+        </div>
+        <div class="orderMain pub_hidden" id="jspayobj">
+            <h1 id="jspaystatus"></h1>
+            <p class="time">支付时间：<span id="jspaytime"></span></p>
+        </div>
+        <div class="address">
+            <div class="" id="jsdefaultaddress">
+                <p class="line1">
+                    <span class="person" >收货人：<span id="jsaddressname"></span></span>
+                    <span class="phone">电话：<span id="jsaddressphone"></span></span>
+                </p>
+                <p class="line2">
+                        <span id="jsaddress"></span>
+                </p>
+            </div>
+        </div>
+        <div class="logisInfo pointer pub_hidden" id="jsexpresses">
+            <h1>物流信息</h1>
+            <div class="logis">
+                <div class="item first">
+                    <h2 id="jsexpresstitle"></h2>
+                    <p id="jsexpresstime"></p>
+                </div>
+            </div>
+            <img src="./images/fr.png" alt="" class="fr">
+        </div>
+        <div id="products">
+
+
+        </div>
+        <div class="IDcard">
+            <h1>全球商品需输入身份证</h1>
+            <div class="num">
+                <span>身份证：</span><input type="text" id="jsid" readonly="readonly" >
+            </div>
+            <p>
+                【根据海关总署令第147号第二十二条：个人物品类进出境快报关时，运营人
+                应当向海关提交《中华人民共和国海关进出物品申报单》、每一件出境快件的
+                分运单、进境快件收件人或出境快件发件人身份和海关需要的其它单证。提供
+                身份证是海关现行对国际包裹的监管要求之一。 我司将严密保护消费者的身份
+                信息。
+            </p>
+        </div>
+        <div class="row mess">
+            <h1>买家留言</h1>
+            <p><input type="text" id="jsmsg" placeholder="" readonly="readonly" placeholder="" /></p>
+        </div>
+        <div class="row">
+            <div class="item">
+                <span class="label">税金</span>
+                <span class="blue">￥<span class="num" id="tax"></span></span>
+            </div>
+            <div class="item">
+                <span class="label">运费</span>
+                <span class="blue">￥<span class="num" id="freight"></span></span>
+            </div>
+            <div class="item noBor">
+                <span class="label">代金卷</span>
+            </div>
+            <div class="coupon " id="jscoupons">
+
+            </div>
+        </div>
+        <div class="actual">实际应付：<span class="blue"> ￥<span class="num" id="jspaytotal"></span></span></div>
+        <div class="mainBtn paySu pub_hidden" id="jspay">立即购买</div>
+    </div>
+</div>
+<footer>
+    <ul class="lisActive">
+        <li><span><a href="brand.html">设计</a></span></li>
+        <li><span><a href="productclassification.html">分类</a></span></li>
+        <li><span><a href="home.html"></a></span></li>
+        <li><span><a href="shoppingcart.html">购物车</a></span><span class="cartround" id="jscartround"></span></li>
+        <li><span><a href="personal.html">我的</a></span></li>
+    </ul>
+</footer>
+<div class="mask pub_hidden" id="jsmask">
+    <div class="layerBox3">
+        <div class="closeBtn close"><img src="./images/close.png" alt=""></div>
+        <h1>跨境电商购物须知</h1>
+        <div class="wrap">
+            <div class="words">
+                <p class="title">
+                    尊敬的客户： 请务必认真阅读以下条款,了解本文所告知内容后再
+                    行下单购买。如因未能了解下属条款而产生的一切购物纠纷，均
+                    由您个人承担。
+                </p>
+                <p class="main">
+                    1,为了保障所有客户的健康安全，离开海关仓储监管的奶粉、食品、保健品、化妆品、个人护理用品不会再次销售。以上商品请用户在收到货物时与快递人员一起拆开包裹，当面清点货品，认真验货，如发现货品、数量与发货单不符，包装破损，商品过期或离过期不到3个月，以致影响产品正常使用及品质，请您及时反馈给递送人员，并当面拒收，否则品质全球将不再为以上问题负责。我们保证商品的进货渠道和质量，如果您在使用时对商品质量表示置疑，请出具书面鉴定，我们会按照国家法律规定予以处理。
+                    <br><br>
+                    2,物流：跨境电商商品是由保税区发货，商品需完成海关申报手续，故您正常收到货的时间是3-6个工作日，偏远地区除外。
+                    <br><br>
+                    3,务必填写真实身份信息：跨境电商全程在海关监管下运作，须保证订单、支付单、快递单三单一致。所以您在本商城下单结算时请务必填写正确的身份信息及真实姓名（姓名须与身份证号对应），否则将不能清关及发货。
+                    <br><br>
+                    4,无发票：您在本商城购买的商品均为境外商品，所以不能提供发票。
+                    <br><br>
+                    5,海关将您购买的商品视为个人行邮物品，依据海关总署2010年43号公告及2012年15号公告规定，海关对个人邮递物品依法征收进口税。但单笔订单应征进口税税额在人民币50元以下（含50元）的，海关予以免征；单笔订单超过50元起征点的，将全额征收税款。 行邮税计算方式=商品价格*行邮税税率 每个身份证（同一收货地址）单日购买金额不超过1000元（单个不可拆分商品可购买一件）；每个身份证每年购买金额不超过20000元（单个不可拆分商品可购买一件）。
+                </p>
+
+            </div>
+        </div>
+        <div class="btn " id="jsreadconfirm">已阅读</div>
+    </div>
+</div>
+<script type='text/javascript' src='./javascript/jquery-2.1.4.min.js?version=1.02'></script>
+<script type='text/javascript' src='./javascript/basepath.js?a=1&version=1.02'></script>
+<script type='text/javascript' src='javascript/global2.js?a=1&version=1.02'></script>
+<script type='text/javascript' src='./javascript/slider.js?a=1&version=1.02'></script>
+<script type='text/javascript' src='./javascript/simple.js?a=1&version=1.02'></script>
+<script type='text/javascript' src='./javascript/orderdetail.js?a=1&version=1.02'></script>
+</body>
+</html>

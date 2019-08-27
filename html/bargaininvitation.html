@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="Keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="Administrator" />
+
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link href="./css/base.css" rel="stylesheet" type="text/css" />
+    <link href="./css/slider.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+</head>
+<body>
+	<header>
+		<div class="back"><a onClick="javascript:history.go(-1);"><img src="./images/back.png"></a></div>
+	    砍价商品
+	</header>
+	<div class="con">
+		<div class="countdown">
+			<p>
+				<img src="./images/countdown.png" alt="">
+				剩余时间<span>01</span>天<span>12</span>时<span>50</span>分<span>26</span>秒
+			</p>
+		</div>
+		<div class="modle1 col noTop">
+			<h2 id="jsname">HJMin唇色引诱唇膏</h2>
+			<div class="wb-brand" id="jsbrand">
+                <div id="bannerShift">
+                	<img src="./images/class_a1.jpg">
+                </div>
+                <span class="heart"><img src="./images/heart2.png" alt=""><span>4</span></span>
+			</div>
+			<div class="opera">
+				<div class="left">
+					<p class="now"><span></span><span id="jsprice" style="margin-right:10px;">￥59.00</span><span style="text-decoration:line-through;" id="jsprice2">￥32434</span></p>
+                    <p class='' id = "jsshuicon" style="color:#757575;font-size:0.75rem;margin-left:0.5rem;">(另加税金：￥<span id="jsshui">2</span>)<span style="color:#D67004;text-decoration: underline;">【海关公告】</span></p>
+
+                </div>
+				<div class="right"  id="jsjoincart">
+					<img src="./images/buy.png" alt=""><span>加入购物车</span>
+				</div>
+			</div>
+        </div>
+        <div class="bargain-process col">
+            <ul class="list">
+                <li>
+                    <div class="left">
+                        <img src="./images/bargainp01.png" alt="" class="icon">
+                        <p class="txt">发起砍价</p>
+                    </div>
+                    <span class="right"><img src="./images/bargainparrow.png" alt=""></span>
+                </li>
+                <li>
+                    <div class="left">
+                        <img src="./images/bargainp02.png" alt="" class="icon">
+                        <p class="txt">分享砍价</p>
+                    </div>
+                    <span class="right"><img src="./images/bargainparrow.png" alt=""></span>
+                </li>
+                <li>
+                    <div class="left">
+                        <img src="./images/bargainp03.png" alt="" class="icon">
+                        <p class="txt">砍价成功</p>
+                    </div>
+                    <span class="right"><img src="./images/bargainparrow.png" alt=""></span>
+                </li>
+                <li>
+                    <div class="left">
+                        <img src="./images/bargainp04.png" alt="" class="icon">
+                        <p class="txt">立即购买</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="bargainList col">
+        	<h1>亲：<span class="orange">正在砍价中哦~</span></h1>
+        	<p>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已经有 <span class="orange">5</span> 位亲友帮忙砍价了，当前价格为<span class="orange">￥310</span>，赶紧继续邀请好友来砍价吧！
+        	</p>
+        	<div class="wrap">
+        		<div class="greyBg"></div>
+        		<table cellpadding="0" cellspacing="0">
+        			<thead>
+        				<tr>
+        					<th>亲友团</th>
+        					<th>砍掉价格</th>
+        					<th>砍后价格</th>
+        				</tr>
+        			</thead>
+        			<tbody>
+        				<tr>
+        					<td>小公举</td>
+        					<td>￥30</td>
+        					<td><span class="orange">￥310</span></td>
+        				</tr>
+        				<tr>
+        					<td>狂砍一条街</td>
+        					<td>￥50</td>
+        					<td><span class="orange">￥340</span></td>
+        				</tr>
+        				<tr>
+        					<td>爱谁谁</td>
+        					<td>￥30</td>
+        					<td><span class="orange">￥390</span></td>
+        				</tr>
+        			</tbody>
+        		</table>
+        	</div>
+        </div>
+        <div class="invite">
+        	<span class="blue">310元购买</span>
+        	<span class="red">邀请朋友帮忙砍价</span>
+        </div>
+    </div>
+    <div class="mask" id="mask">
+		<div class="confirm">
+			<h1>确定购买</h1>
+			<p>您确定要购买么？确认后不能再进行砍价哦！</p>
+			<div class="btn">
+				<span class="red" id="close">取 消</span>
+				<span class="blue">确 定</span>
+			</div>
+		</div>
+	</div>
+    <div class="mask visibilityhidden" id="productmask" style="">
+        <div class="layerBox2">
+            <div class="close" id="close"><img src="./images/layer_close.png" alt=""></div>
+            <div class="top">
+                <div class="pic" id="selectpic">
+                    <img src="./images/layer_pro.jpg" alt="">
+                </div>
+                <div class="right">
+                    <div class="price" id="price"></div>      
+                    <div class="num" id="num">库存<span>97541</span>件</div>  
+                    <p>请选择</p>
+                </div>
+            </div>
+            <div class="wrap" id="jssku"></div>
+
+            <div class="item topBor">
+                <h2>数量</h2>
+                <div class="adjust">
+                    <div class="reduce"><img src="./images/reduce.png" alt=""></div>
+                    <div class="num"><span id="jsno">1</span></div>
+                    <div class="add"><img src="./images/add.png" alt=""></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="btn">
+                <div class="blue" id="jsjoin">加入购物车</div>
+                <div class="red" id="jsbuy">立即购买</div>
+            </div>
+        </div>
+
+
+    </div>
+	<footer>
+        <ul class="lisActive">
+            <li><span><a href="brand.html">设计</a></span></li>
+            <li><span><a href="productclassification.html">分类</a></span></li>
+            <li><span><a href="home.html"></a></span></li>
+            <li><span><a href="shoppingcart.html">购物车</a></span><span class="cartround" id="jscartround"></span></li>
+            <li><span><a href="personal.html">我的</a></span></li>
+        </ul>
+	</footer>
+    <script type='text/javascript' src='./javascript/jquery-2.1.4.min.js?version=1.02'></script>
+    <script type='text/javascript' src='./javascript/basepath.js?a=1&version=1.02'></script>
+    <script type='text/javascript' src='javascript/global2.js?a=1&version=1.02'></script>
+    <script type='text/javascript' src='./javascript/slider.js?a=1&version=1.02'></script>
+    <script type='text/javascript' src='./javascript/simple.js?a=1&version=1.02'></script>
+    <script type='text/javascript'>
+        $(function(){
+            $('#close').click(function(){
+                $('#productmask').addClass('visibilityhidden');
+            });
+            //数量加减
+            $(".adjust .reduce").click(function(){
+                var obj=$(this).siblings('.num').eq(0).find('span');
+                var num = parseInt(obj.html());
+                num--;
+                if(num < 1){
+                    num=1;
+                }
+              //  CallBack._subAttr['数量'] = num;
+                obj.html(num);
+            });
+            $(".adjust .add").click(function(){
+                var obj=$(this).siblings('.num').eq(0).find('span');
+                var num = parseInt(obj.html());
+                num++;
+              //  CallBack._subAttr['数量'] = num;
+                obj.html(num);
+            });
+            $('#close').click(function(){
+            	$('#mask').css('display','none');
+            });
+        });
+    </script>
+</body>
+</html>
